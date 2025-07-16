@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="45">
   <style>
     html, body {
       margin: 0;
@@ -17,7 +16,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-	  flex-direction: column;
+      flex-direction: column;
     }
 
     img {
@@ -26,16 +25,27 @@
       object-fit: contain;
       user-select: none;
     }
-	
+
     hr {
-      height: 3px !important; 
-      margin: 0px !important; 
+      height: 3px !important;
+      margin: 0px !important;
     }
   </style>
+  <script>
+    function reloadImages() {
+      const timestamp = new Date().getTime();
+      <!-- document.getElementById('img1').src = "https://tcnvr5.taichung.gov.tw/408095ee?t=" + timestamp; -->
+      <!-- document.getElementById('img2').src = "https://tcnvr6.taichung.gov.tw/567c2768?t=" + timestamp; -->
+      document.getElementById('img1').src = "https://tcnvr5.taichung.gov.tw/408095ee";
+      document.getElementById('img2').src = "https://tcnvr6.taichung.gov.tw/567c2768";
+    }
+
+    setInterval(reloadImages, 30000); // 30秒
+  </script>
 </head>
 <body>
-  <img src="https://tcnvr5.taichung.gov.tw/408095ee" alt="Camera Feed">
+  <img id="img1" src="https://tcnvr5.taichung.gov.tw/408095ee" alt="Camera Feed">
   <hr/>
-  <img src="https://tcnvr6.taichung.gov.tw/567c2768" alt="Camera Feed">
+  <img id="img2" src="https://tcnvr6.taichung.gov.tw/567c2768" alt="Camera Feed">
 </body>
 </html>
